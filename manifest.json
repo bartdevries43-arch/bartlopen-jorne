@@ -1,7 +1,7 @@
 {
   "name": "Sterker worden (Jorne) , bartlopen Personal Trainer",
   "short_name": "Sterker worden",
-  "description": "Jorne's 12-weken krachtprogramma richting 100 kg, met coaching, loggen, records en planning.",
+  "description": "Jornes 12-weken krachtprogramma richting 100 kg, met coaching, loggen, records en planning.",
   "start_url": ".", "scope": ".", "display": "standalone", "orientation": "portrait",
   "background_color": "#0a0a0b", "theme_color": "#0a0a0b",
   "icons": [
