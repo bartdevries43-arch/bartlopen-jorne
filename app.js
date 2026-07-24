@@ -497,3 +497,15 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => { const s = $("splash"); if (s) s.classList.add("gone"); }, 700);
   setTimeout(() => { initialRevealDone = true; document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in")); }, 1300);
 });
+
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  /* Auto-verversen: nieuwe versie neemt over -> pagina herlaadt zichzelf een keer */
+  const hadController = !!navigator.serviceWorker.controller;
+  let autoReloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!hadController || autoReloaded) return;
+    autoReloaded = true;
+    window.location.reload();
+  });
+  navigator.serviceWorker.register("sw.js").catch(() => {});
+}
